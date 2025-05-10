@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan dos Santos | Estudante de Engenharia de Software</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="menu">
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
+  <div class="menu-links">
+    <a href="#sobre" onclick="mostrarSecao('sobre')">Sobre</a>
+    <a href="#formacao" onclick="mostrarSecao('formacao')">Formação</a>
+    <a href="#portfolio" onclick="mostrarSecao('portfolio')">Portfólio</a>
+    <a href="#contato" onclick="mostrarSecao('contato')">Contato</a>
+    </div>
+</nav>
+
+  <main class="container">
+    <section id="sobre" class="secao ativa">
+      <img src="minha-foto.jpg" alt="Foto de perfil de Ryan dos Santos">
+      <h2>Ryan dos Santos</h2>
+      <p><strong>Estudante de Engenharia de Software | Foco em Desenvolvimento Java</strong></p>
+      <p>
+        Olá! Sou apaixonado por tecnologia e resolução de problemas. Atualmente curso Engenharia de Software na UNINTER e estou em busca de oportunidades para aplicar meus conhecimentos em projetos reais.
+        Possuo experiência com Java, JavaScript, HTML, CSS e bancos de dados MySQL. Tenho inglês intermediário com foco em leitura técnica e conversação básica.
+      </p>
+    </section>
+
+    <section id="formacao" class="secao">
+      <h2>Formação</h2>
+      <p>
+        <strong>Engenharia de Software</strong><br>
+        Centro Universitário Internacional (UNINTER)<br>
+        Início: 2023 | Previsão de conclusão: Dezembro de 2027
+      </p>
+      <br>
+      <p>
+        <strong>Curso complementar:</strong><br>
+        Desenvolvimento Java - Nélio Alves (Udemy)
+      </p>
+      <br>
+      <h2>Habilidades Técnicas</h2>
+      <ul>
+        <li><strong>Linguagens:</strong> Java, JavaScript, HTML, CSS</li>
+        <li><strong>Banco de Dados:</strong> MySQL</li>
+        <li><strong>Ferramentas:</strong> Git, GitHub, VS Code, IntelliJ IDEA</li>
+        <li><strong>Idiomas:</strong> Português (nativo), Inglês (intermediário)</li>
+      </ul>
+    </section>
+
+    <section id="portfolio" class="secao">
+      <h2>Portfólio</h2>
+      <p>Confira alguns dos meus projetos no GitHub: <a href="https://github.com/ryanoviski" target="_blank">Perfil GitHub</a></p>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Contato</h2>
+      <form action="mailto:seu@email.com" method="post" enctype="text/plain">
+        <label>Nome:<br><input type="text" name="nome" required></label>
+        <label>Email:<br><input type="email" name="email" required></label>
+        <label>Mensagem:<br><textarea name="mensagem" required></textarea></label>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

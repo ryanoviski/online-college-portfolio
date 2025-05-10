@@ -1,0 +1,257 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 900px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Menu fixo */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #007acc;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    background-color: #007acc;
+    color: white;
+}
+
+/* Seções */
+.secao {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.secao.ativa {
+    display: block;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos */
+.secao h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #005f99;
+    border-bottom: 2px solid #007acc;
+    padding-bottom: 5px;
+}
+
+/* Imagem */
+#sobre img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #007acc;
+    transition: transform 0.3s ease-in-out;
+}
+
+#sobre img:hover {
+    transform: scale(1.05);
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    width: fit-content;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #005f99;
+}
+
+/* Links */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    margin-left: 20px;
+    list-style: disc;
+    padding-top: 8px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .container {
+        margin-top: 260px;
+        padding: 15px;
+    }
+
+    #sobre img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+/* Responsivo com menu hambúrguer */
+.menu {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .menu-links.aberto {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+    }
+}
+
+
+/* Animação suave no menu responsivo */
+.menu-links {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Melhoria para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    input, textarea {
+        font-size: 1.05rem;
+    }
+}
